@@ -48,6 +48,8 @@ Note carefully the Syntax for - file:///home
 ```
 
 ##
+Next we need to Configure [APACHE - Gora](http://gora.apache.org/)
+
 #
 
 
