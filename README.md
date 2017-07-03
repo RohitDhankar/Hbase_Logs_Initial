@@ -1,5 +1,5 @@
 ### Nutch - apache-nutch-2.3.1-src
-### HBase - hbase-0.98.8-hadoop2-bin
+### HBase - hbase-0.98.8-hadoop2-bin-[Download Link](http://archive.apache.org/dist/hbase/hbase-0.98.8/hbase-0.98.8-hadoop2-bin.tar.gz) 
 ### Ant - ANT 1.10.1
 ### Solr - Apache Solr solr-5.2.1
 ### ZooKeeper - zookeeper-3.4.10
@@ -49,6 +49,21 @@ Note carefully the Syntax for - file:///home
 
 ##
 Next we need to Configure [APACHE - Gora](http://gora.apache.org/)
+We need to ensure GORA uses HBase as its Default Data Store. 
+#
+Open file -- /home/dhankar/Nutch1/nutch/conf/gora.properties 
+Find the Commented 
+```
+#########################
+# HBaseStore properties #
+#########################
+
+```
+Just below this commented section - Add Line -- ``` gora.datastore.default=org.apache.gora.hbase.store.HBaseStore ```
+
+
+
+
 
 #
 
