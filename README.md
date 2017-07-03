@@ -3,8 +3,7 @@
 ### Ant - ANT 1.10.1
 ### Solr - Apache Solr solr-5.2.1
 ### ZooKeeper - zookeeper-3.4.10
-
-
+#
 $ sudo gedit ~/.bashrc
 
 #### in the bashrc file --- add at end of file --- 
