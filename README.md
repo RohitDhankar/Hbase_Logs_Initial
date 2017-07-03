@@ -62,6 +62,21 @@ Find the Commented
 #########################
 ```
 Just below this commented section - Add Line -- ``` gora.datastore.default=org.apache.gora.hbase.store.HBaseStore ```
+#
+Next we configure IVY - Ivy is the now de-facto [dependency management tool used for Nutch Builds](https://issues.apache.org/jira/browse/NUTCH-821)
+#
+Open File -- $NUTCH_HOME/ivy/ivy.xml  -- in my case its - /home/dhankar/Nutch1/nutch/ivy/ivy.xml
+Uncomment and add lines as below -- 
+
+```
+<!-- Uncomment this to use HBase as Gora backend. -->
+
+    <dependency org="org.apache.gora" name="gora-hbase" rev="0.6.1" conf="*->default" /> 
+
+    <dependency org="org.apache.hbase" name="hbase-common" rev="0.98.8-hadoop2" conf="*->default" />
+```
+#
+
 
 
 
