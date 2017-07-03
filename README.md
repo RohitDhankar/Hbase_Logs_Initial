@@ -10,7 +10,7 @@ dhankar@dhankar-VPCEB44EN:$ sudo gedit ~/.bashrc
 export JAVA_HOME=" Abs Path to JDK "
 export NUTCH_JAVA_HOME=" Abs Path "
 
-##  Save by SOURCING the .bashrc file 
+####  Save by SOURCING the .bashrc file 
 
 
 
