@@ -1,8 +1,13 @@
+Main tutorial source for current / updated information - [Nutch2Tutorial](https://wiki.apache.org/nutch/Nutch2Tutorial)
+
 ### Nutch - apache-nutch-2.3.1-src
 ### HBase - hbase-0.98.8-hadoop2-bin-[Download Link](http://archive.apache.org/dist/hbase/hbase-0.98.8/hbase-0.98.8-hadoop2-bin.tar.gz) 
 ### Ant - ANT 1.10.1
 ### Solr - Apache Solr solr-5.2.1
 ### ZooKeeper - zookeeper-3.4.10
+
+Download all Binary Archives usually in Gzip formats - Untar all of them in a NUTCH Directory ( Mine is Called Nutch1)
+Update your Java Home path in your .bashrc file . This can be edited with a text editor - i use Gedit on Ubuntu.
 
 ```
 $ sudo gedit ~/.bashrc
