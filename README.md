@@ -22,12 +22,13 @@ After Updating the PATH Variables we need to SOURCE the .bashrc File --- this is
 $ source ~/.bashrc
 
 ```
-
-####  Saved by SOURCING the .bashrc file 
+Saved by SOURCING the .bashrc file 
 #
-#### Open - /home/dhankar/Nutch1/hbase/conf/hbase-site.xml
-#### Add <property> Tags within <configuration> Tags - these are for the HBase Root Directory 
+
+Open file --- /home/dhankar/Nutch1/hbase/conf/hbase-site.xml
+Add ```<property>``` Tags within ```<configuration>``` Tags - these are for the HBase Root Directory 
 and the --- hbase.zookeeper.property.dataDir
+#
 Note carefully the Syntax for - file:///home
 
 ```
