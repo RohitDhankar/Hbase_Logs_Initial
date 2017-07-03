@@ -22,6 +22,7 @@ $ source ~/.bashrc
 and the --- hbase.zookeeper.property.dataDir
 Note carefully the Syntax for - file:///home
 
+```
 <configuration>
 
 <property>
@@ -35,6 +36,11 @@ Note carefully the Syntax for - file:///home
 
 
 </configuration>
+```
+
+##
+#
+
 
 
 
