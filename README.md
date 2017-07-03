@@ -76,6 +76,76 @@ Uncomment and add lines as below --
     <dependency org="org.apache.hbase" name="hbase-common" rev="0.98.8-hadoop2" conf="*->default" />
 ```
 #
+Next we Compile Nutch Via the ANT Runtime ---
+```
+ant runtime 
+```
+Running above cmd - we may get a delayed / staggered response - the content of the console should be as below -- 
+
+```
+dhankar@dhankar-VPCEB44EN:~/Nutch1/nutch$ ant -version
+Apache Ant(TM) version 1.10.1 compiled on February 2 2017
+dhankar@dhankar-VPCEB44EN:~/Nutch1/nutch$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch1/nutch$ ant runtime
+Buildfile: /home/dhankar/Nutch1/nutch/build.xml
+Trying to override old definition of task javac
+  [taskdef] Could not load definitions from resource org/sonar/ant/antlib.xml. It could not be found.
+
+ivy-probe-antlib:
+
+ivy-download:
+  [taskdef] Could not load definitions from resource org/sonar/ant/antlib.xml. It could not be found.
+
+ivy-download-unchecked:
+
+ivy-init-antlib:
+
+ivy-init:
+
+init:
+
+clean-lib:
+
+resolve-default:
+[ivy:resolve] :: Apache Ivy 2.3.0 - 20130110142753 :: http://ant.apache.org/ivy/ ::
+[ivy:resolve] :: loading settings :: file = /home/dhankar/Nutch1/nutch/ivy/ivysettings.xml
+[ivy:resolve] downloading http://repo1.maven.org/maven2/org/apache/solr/solr-solrj/4.6.0/solr-solrj-4.6.0.jar ...
+[ivy:resolve] ...................................................................................................................................... (393kB)
+[ivy:resolve] .. (0kB)
+[ivy:resolve] 	[SUCCESSFUL ] org.apache.solr#solr-solrj;4.6.0!solr-solrj.jar (847ms)
+[ivy:resolve] downloading http://repo1.maven.org/maven2/org/apache/hadoop/hadoop-core/1.2.0/hadoop-core-1.2.0.jar ...
+[ivy:resolve] ..................................................................................................................................................................................................................................................................................................
+[ivy:resolve] .... (4101kB)
+[ivy:resolve] .. (0kB)
+[ivy:resolve] 	[SUCCESSFUL ] org.apache.hadoop#hadoop-core;1.2.0!hadoop-core.jar (2371ms)
+[ivy:resolve] downloading http://repo1.maven.org/maven2/org/jdom/jdom/1.1/jdom-1.1.jar ...
+[ivy:resolve] ......................... (149kB)
+[ivy:resolve] .. (0kB)
+[ivy:resolve] 	[SUCCESSFUL ] org.jdom#jdom;1.1!jdom.jar (623ms)
+[ivy:resolve] downloading http://maven.restlet.org/org/restlet/jse/org.restlet/2.2.3/org.restlet-2.2.3.jar ...
+[ivy:resolve] ................
+[ivy:resolve] ..........................
+[ivy:resolve] ............................
+[ivy:resolve] ..........................
+[ivy:resolve] ...........................................
+[ivy:resolve] .......................... (670kB)
+[ivy:resolve] .. (0kB)
+[ivy:resolve] 	[SUCCESSFUL ] org.restlet.jse#org.restlet;2.2.3!org.restlet.jar (13164ms)
+[ivy:resolve] downloading http://maven.restlet.org/org/restlet/jse/org.restlet.ext.jackson/2.2.3/org.restlet.ext.jackson-2.2.3.jar ...
+[ivy:resolve] .. (7kB)
+[ivy:resolve] .. (0kB)
+[ivy:resolve] 	[SUCCESSFUL ] org.restlet.jse#org.restlet.ext.jackson;2.2.3!org.restlet.ext.jackson.jar (3404ms)
+[ivy:resolve] downloading http://maven.restlet.org/org/restlet/jse/org.restlet.ext.jaxrs/2.2.3/org.restlet.ext.jaxrs-2.2.3.jar ...
+[ivy:resolve] ..........................................
+[ivy:resolve] . (305kB)
+[ivy:resolve] .. (0kB)
+
+### Continued ---------- Truncated Dump of Console 
+```
+#
+#
+
+
 
 
 
