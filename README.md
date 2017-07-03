@@ -5,12 +5,12 @@
 ### ZooKeeper - zookeeper-3.4.10
 #
 $ sudo gedit ~/.bashrc
-
+#
 #### in the bashrc file --- add at end of file --- 
-
+#
 export JAVA_HOME=" Abs Path to JDK "
 export NUTCH_JAVA_HOME=" Abs Path "
-
+#
 #### After Updating the PATH VAriables we need to SOURCE the .bashrc File --- this is done without SUDO 
 #
 $ source ~/.bashrc
