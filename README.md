@@ -190,6 +190,12 @@ starting master, logging to /home/dhankar/Nutch1/hbase/bin/../logs/hbase-dhankar
 
 ```
 #
+~/Nutch1$ solr/bin/solr start create_core -c demo
+#
+```
+http://localhost:8983/solr/#/
+
+```
 #
 
 
