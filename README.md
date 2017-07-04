@@ -32,7 +32,7 @@ Saved by SOURCING the .bashrc file
 Next we open file ```~/Nutch1/hbase/conf/hbase-env.sh```  need to mention JAVA_HOME same as .bashrc file here too .
 
 ```
-#### Only Line Below Changed in this file by Dhankar
+#### JAVA_HOME path as below -- in some sites mentioned as "JAVA_HOME=usr/ " only - but i have entire path
 export JAVA_HOME=/home/dhankar/usr/lib/jvm/java-8-oracle/
 ```
 
