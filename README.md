@@ -68,6 +68,22 @@ Note carefully the Syntax for - file:///home
 
 </configuration>
 ```
+#
+Have seen certain folk having configured the Deafult Port for Zookeeper Local Host as - 2222
+Am not sure if this is required - this step has been by-passed for now. 
+
+```
+<property>
+      <name>hbase.zookeeper.property.clientPort</name>
+          <value>
+              2222
+          </value>
+             <description>
+                Local Host Value for Zookeeper connection .
+             </description>
+</property>
+
+```
 
 ##
 Next we need to Configure [APACHE - Gora](http://gora.apache.org/)
