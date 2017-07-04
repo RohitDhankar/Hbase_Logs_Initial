@@ -176,7 +176,51 @@ resolve-default:
 [ivy:resolve] .. (0kB)
 
 ### Continued ---------- Truncated Dump of Console 
+resolve-default:
+[ivy:resolve] :: loading settings :: file = /home/dhankar/Nutch1/nutch/ivy/ivysettings.xml
+
+compile:
+
+jar:
+
+deps-test:
+
+deploy:
+
+copy-generated-lib:
+
+deploy:
+     [copy] Copying 1 file to /home/dhankar/Nutch1/nutch/build/plugins/urlnormalizer-regex
+
+copy-generated-lib:
+     [copy] Copying 1 file to /home/dhankar/Nutch1/nutch/build/plugins/urlnormalizer-regex
+
+compile:
+
+job:
+      [jar] Building jar: /home/dhankar/Nutch1/nutch/build/apache-nutch-2.3.1.job
+
+runtime:
+    [mkdir] Created dir: /home/dhankar/Nutch1/nutch/runtime
+    [mkdir] Created dir: /home/dhankar/Nutch1/nutch/runtime/local
+    [mkdir] Created dir: /home/dhankar/Nutch1/nutch/runtime/deploy
+     [copy] Copying 1 file to /home/dhankar/Nutch1/nutch/runtime/deploy
+     [copy] Copying 2 files to /home/dhankar/Nutch1/nutch/runtime/deploy/bin
+     [copy] Copying 1 file to /home/dhankar/Nutch1/nutch/runtime/local/lib
+     [copy] Copying 1 file to /home/dhankar/Nutch1/nutch/runtime/local/lib/native
+     [copy] Copying 30 files to /home/dhankar/Nutch1/nutch/runtime/local/conf
+     [copy] Copying 2 files to /home/dhankar/Nutch1/nutch/runtime/local/bin
+     [copy] Copying 228 files to /home/dhankar/Nutch1/nutch/runtime/local/lib
+     [copy] Copying 189 files to /home/dhankar/Nutch1/nutch/runtime/local/plugins
+     [copy] Copied 2 empty directories to 2 empty directories under /home/dhankar/Nutch1/nutch/runtime/local/test
+
+BUILD SUCCESSFUL
+Total time: 7 minutes 12 seconds
+dhankar@dhankar-VPCEB44EN:~/Nutch1/nutch$ 
+
 ```
+# 
+The console dump as seen above may differ for you - focus on the - BUILD SUCCESSFUL. 
 #
 Next we want to start up HBase - 
 CD into the Nutch Root DIR - Nutch1 in my case - run cmd ---> 
@@ -197,6 +241,46 @@ http://localhost:8983/solr/#/
 
 ```
 #
+We can see a GUI page of SOLR at the LocalHost 8983
+To summarize - 
+1. We have HBase running.
+2. We have SOLR running.
+3. We have Compiled Nutch with Ant.
+
+Now we open DIR -- ```/home/dhankar/Nutch1/nutch/runtime/local/conf ```
+
+```
+dhankar@dhankar-VPCEB44EN:~/Nutch1/nutch/runtime/local/conf$ pwd
+/home/dhankar/Nutch1/nutch/runtime/local/conf
+dhankar@dhankar-VPCEB44EN:~/Nutch1/nutch/runtime/local/conf$ ls
+automaton-urlfilter.txt     gora.properties               nutch-site.xml
+configuration.xsl           gora-solr-host-schema.xml     parse-plugins.dtd
+domain-suffixes.xml         gora-solr-mapping.xml         parse-plugins.xml
+domain-suffixes.xsd         gora-solr-webpage-schema.xml  prefix-urlfilter.txt
+domain-urlfilter.txt        gora-sql-mapping.xml          regex-normalize.xml
+elasticsearch.conf          hbase-site.xml                regex-urlfilter.txt
+gora-accumulo-mapping.xml   httpclient-auth.xml           schema.xml
+gora-cassandra-mapping.xml  log4j.properties              solrindex-mapping.xml
+gora-hbase-mapping.xml      nutch-conf.xsl                subcollections.xml
+gora-mongodb-mapping.xml    nutch-default.xml             suffix-urlfilter.txt
+dhankar@dhankar-VPCEB44EN:~/Nutch1/nutch/runtime/local/conf$ 
+```
+Edit the File - ```gedit regex-urlfilter.txt```
+#
+Create a DIR - urls
+
+```
+dhankar@dhankar-VPCEB44EN:~/Nutch1/nutch/runtime/local$ sudo mkdir urls
+dhankar@dhankar-VPCEB44EN:~/Nutch1/nutch/runtime/local$ ls
+bin  conf  lib  plugins  test  urls
+dhankar@dhankar-VPCEB44EN:~/Nutch1/nutch/runtime/local$ 
+```
+
+# 
+Testing ---- 
+
+#
+
 
 
 
