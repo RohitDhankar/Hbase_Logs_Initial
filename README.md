@@ -29,8 +29,14 @@ $ source ~/.bashrc
 ```
 Saved by SOURCING the .bashrc file 
 #
-Next we open the hbase.sh file within the DIR - 
-We uncomment line as below so that HBase can manage its own instances of Zookeeper and we not manually START or STOP Zookeeper
+Next we open file ```~/Nutch1/hbase/conf/hbase-env.sh```  need to mention JAVA_HOME same as .bashrc file here too .
+
+```
+#### Only Line Below Changed in this file by Dhankar
+export JAVA_HOME=/home/dhankar/usr/lib/jvm/java-8-oracle/
+```
+
+We also uncomment line as below - so that HBase can manage its own instances of Zookeeper , we need not manually START or STOP Zookeeper. 
 
 ```
 # Tell HBase whether it should manage it's own instance of Zookeeper or not.
