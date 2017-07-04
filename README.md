@@ -148,8 +148,11 @@ CD into the Nutch Root DIR - Nutch1 in my case - run cmd --->
 ``` hbase/bin/start-hbase.sh```
 #
 My console output as below -- 
-```dhankar@dhankar-VPCEB44EN:~/Nutch1$ hbase/bin/start-hbase.sh
+#
+```
+dhankar@dhankar-VPCEB44EN:~/Nutch1$ hbase/bin/start-hbase.sh
 starting master, logging to /home/dhankar/Nutch1/hbase/bin/../logs/hbase-dhankar-master-dhankar-VPCEB44EN.out
+
 ```
 #
 
