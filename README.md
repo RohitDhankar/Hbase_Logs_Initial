@@ -14,11 +14,13 @@ Update your Java Home path in your .bashrc file . This can be edited with a text
 $ sudo gedit ~/.bashrc
 ```
 
-in the bashrc file --- add PATH Variables at end of file --- 
+in the bashrc file - add PATH Variable for NUTCH_JAVA_HOME at end of file - this has to be the same Path Variable that we have provided for JAVA_HOME within this very file earlier --->
 
 ```
-export JAVA_HOME=" Abs Path to JDK "
-export NUTCH_JAVA_HOME=" Abs Path "
+## Need to set the -- NUTCH_JAVA_HOME= same as --- JAVA_HOME 
+#
+export NUTCH_JAVA_HOME=/home/dhankar/usr/lib/jvm/java-8-oracle/
+
 ```
 After Updating the PATH Variables we need to SOURCE the .bashrc File --- this is done without SUDO 
 
