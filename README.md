@@ -144,6 +144,9 @@ resolve-default:
 ```
 #
 #
+Next we want to start up HBase - 
+CD into the Nutch Root Dir - Nutch1 in my case - run cmd ---> ``` hbase/bin/start-hbase.sh```
+#
 
 
 
