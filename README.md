@@ -143,9 +143,9 @@ resolve-default:
 ### Continued ---------- Truncated Dump of Console 
 ```
 #
-#
 Next we want to start up HBase - 
-CD into the Nutch Root Dir - Nutch1 in my case - run cmd ---> ``` hbase/bin/start-hbase.sh```
+CD into the Nutch Root DIR - Nutch1 in my case - run cmd ---> 
+``` hbase/bin/start-hbase.sh```
 #
 
 
