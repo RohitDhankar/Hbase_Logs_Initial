@@ -28,6 +28,17 @@ After Updating the PATH Variables we need to SOURCE the .bashrc File --- this is
 $ source ~/.bashrc
 ```
 Saved by SOURCING the .bashrc file 
+#
+Next we open the hbase.sh file within the DIR - 
+We uncomment line as below so that HBase can manage its own instances of Zookeeper and we not manually START or STOP Zookeeper
+
+```
+# Tell HBase whether it should manage it's own instance of Zookeeper or not.
+export HBASE_MANAGES_ZK=true
+
+```
+#
+#
 
 Next Open the file --- ~/Nutch1/hbase/conf/hbase-site.xml
 #
