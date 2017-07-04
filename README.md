@@ -266,18 +266,20 @@ gora-mongodb-mapping.xml    nutch-default.xml             suffix-urlfilter.txt
 dhankar@dhankar-VPCEB44EN:~/Nutch1/nutch/runtime/local/conf$ 
 ```
 Edit the File - ```gedit regex-urlfilter.txt```
+
+End of File - after # accept anything else - add a URL followed by a CARET ^ 
 #
 Create a DIR - urls
 
 ```
-dhankar@dhankar-VPCEB44EN:~/Nutch1/nutch/runtime/local$ sudo mkdir urls
+dhankar@dhankar-VPCEB44EN:~/Nutch1/nutch/runtime/local$ mkdir urls
 dhankar@dhankar-VPCEB44EN:~/Nutch1/nutch/runtime/local$ ls
 bin  conf  lib  plugins  test  urls
 dhankar@dhankar-VPCEB44EN:~/Nutch1/nutch/runtime/local$ 
 ```
 
 # 
-Testing ---- 
+
 
 #
 
