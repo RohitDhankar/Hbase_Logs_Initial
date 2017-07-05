@@ -386,12 +386,9 @@ While Checking Error Logs in DIR --- ```/home/dhankar/Nutch1/nutch/runtime/local
 We look at file - ```hadoop.log``` , within which we search for text - "Caused by:" as an initial check ...
 For instance - We dig up this line below -- 
 "Caused by: org.apache.zookeeper.KeeperException$ConnectionLossException: KeeperErrorCode = ConnectionLoss for /hbase/meta-region-server"
-
-
-
 #
-For now added entried as below  --- maxClientCnxns=60 --- in the ``` /home/dhankar/Nutch1/zookeeper/conf/zoo.cfg ``` file 
-
+For now added entries as below  --- maxClientCnxns=60 --- in the ``` /home/dhankar/Nutch1/zookeeper/conf/zoo.cfg ``` file 
+But it seems the maxClientCnxns - is Not the issue . 
 #
 ```
 # the maximum number of client connections.
@@ -402,7 +399,26 @@ maxClientCnxns=60
 #
 ```
 #
+Zookeeper is facing challenges starting up / connecting with HBase ? 
 #
+Few quick things learnt and tried a couple of quick fixes - none seems to work as of now - documenting them below --
+
+#### Issue -1 -- 
+Not sure if Zookeeper Runs on its own even though we have chosen the HBase option where Zookeeper is managed by HBase and probaly doesnt need to be started or stopped by user manually. 
+
+When we start Zookeeper manually with the cmd -- ```dhankar@dhankar-VPCEB44EN:~/Nutch1/zookeeper$ sudo bin/zkServer.sh start```
+We get the following in console -- 
+```ZooKeeper JMX enabled by default
+Using config: /home/dhankar/Nutch1/zookeeper/bin/../conf/zoo.cfg
+Starting zookeeper ... STARTED
+```
+#
+```
+2017-06-27 19:19:17,612 [myid:] - INFO  [main:ZooKeeper@438] - Initiating client connection, connectString=localhost:2181 sessionTimeout=30000 watcher=org.apache.zookeeper.ZooKeeperMain$MyWatcher@506c589e
+Welcome to ZooKeeper!
+```
+#
+SOLR Announces its PID --- on executing - jps -- SOLR is shown as "jar"
 
 
 #
