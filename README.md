@@ -44,6 +44,24 @@ export HBASE_MANAGES_ZK=true
 
 ```
 #
+Next open the --- ``` sudo gedit /etc/hosts ```
+
+Change from as below to further as below --- "YourUbunutuComputerName" == 127.0.1.1 ---> 127.0.0.1
+```
+
+127.0.0.1	localhost
+127.0.1.1	YourUbunutuComputerName
+
+
+```
+#
+```
+
+127.0.0.1	localhost
+127.0.0.1	YourUbunutuComputerName
+
+
+```
 #
 
 Next Open the file --- ~/Nutch1/hbase/conf/hbase-site.xml
