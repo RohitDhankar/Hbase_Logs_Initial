@@ -46,11 +46,11 @@ export HBASE_MANAGES_ZK=true
 #
 Next open the --- ``` sudo gedit /etc/hosts ```
 
-Change from as below to further as below --- "YourUbunutuComputerName" == 127.0.1.1 ---> 127.0.0.1
+Change from as below to further as below --- "YourUbuntuComputerName" == 127.0.1.1 ---> 127.0.0.1
 ```
 
 127.0.0.1	localhost
-127.0.1.1	YourUbunutuComputerName
+127.0.1.1	YourUbuntuComputerName
 
 
 ```
@@ -58,7 +58,7 @@ Change from as below to further as below --- "YourUbunutuComputerName" == 127.0.
 ```
 
 127.0.0.1	localhost
-127.0.0.1	YourUbunutuComputerName
+127.0.0.1	YourUbuntuComputerName
 
 
 ```
