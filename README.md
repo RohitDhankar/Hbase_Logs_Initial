@@ -412,11 +412,19 @@ We get the following in console --
 Using config: /home/dhankar/Nutch1/zookeeper/bin/../conf/zoo.cfg
 Starting zookeeper ... STARTED
 ```
+```
+## Issue -1 --- Zookepper seems Not to Read JAVA_HOME 
+dhankar@dhankar-VPCEB44EN:~/Nutch1/zookeeper$ cat zookeeper.out
+nohup: failed to run command '/usr/lib/jvm/java-8-oracle/jre/bin/java/bin/java': Not a directory
+
+
+```
 #
 ```
 2017-06-27 19:19:17,612 [myid:] - INFO  [main:ZooKeeper@438] - Initiating client connection, connectString=localhost:2181 sessionTimeout=30000 watcher=org.apache.zookeeper.ZooKeeperMain$MyWatcher@506c589e
 Welcome to ZooKeeper!
 ```
+
 #
 SOLR Announces its PID --- on executing - jps -- SOLR is shown as "jar"
 
