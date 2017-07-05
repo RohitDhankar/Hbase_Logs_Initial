@@ -340,6 +340,24 @@ dhankar@dhankar-VPCEB44EN:~/Nutch1/nutch/runtime/local$
 ```
 
 # 
+When Injecting URLs DIR and the seed.txt file -- facing issues of Delays and Freezes 
+
+While Checking Error Logs in DIR --- ```
+
+
+For now added entried as below  --- maxClientCnxns=60 --- in the ``` /home/dhankar/Nutch1/zookeeper/conf/zoo.cfg ``` file 
+
+#
+```
+# the maximum number of client connections.
+# increase this if you need to handle more clients
+#### DHANKAR --- Added this - maxClientCnxns=60 - to the HBase-site.xml - File also - wasnt done earlier ...
+
+maxClientCnxns=60
+#
+```
+#
+#
 
 
 #
