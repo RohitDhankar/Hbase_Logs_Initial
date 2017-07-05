@@ -102,6 +102,19 @@ Am not sure if this is required - this step has been by-passed for now.
 </property>
 
 ```
+#
+I cant see a reason why we should change the default Port - 2181 , thus have made an entry in file -- ```  hbase-site.xml```
+which just confirms the Port as - 2181 
+```
+<property>
+      <name>hbase.zookeeper.property.clientPort</name>
+      <value>2181</value>
+      <description>Property from ZooKeeper's config zoo.cfg.
+      The port at which the clients will connect.
+      </description>
+</property>
+```
+
 
 ##
 Next we need to Configure [APACHE - Gora](http://gora.apache.org/)
