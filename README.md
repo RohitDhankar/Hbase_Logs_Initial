@@ -279,9 +279,36 @@ dhankar@dhankar-VPCEB44EN:~/Nutch1/nutch/runtime/local$ bin/nutch webapp
 *** See Application#getConfigurationType() for more information. ***
 ********************************************************************
 
-
+```
+#
+Further we need to "check other related properties:" -- within the ```nutch-default.xml``` file and accordingly update our ```nutch-site.xml```
+#
 
 ```
+<!-- HTTP properties -->
+
+<property>
+  <name>http.agent.name</name>
+  <value></value>
+  <description>HTTP 'User-Agent' request header. MUST NOT be empty - 
+  please set this to a single word uniquely related to your organization.
+
+  NOTE: You should also check other related properties:
+
+	http.robots.agents
+	http.agent.description
+	http.agent.url
+	http.agent.email
+	http.agent.version
+
+  and set their values appropriately.
+
+  </description>
+</property>
+```
+
+
+
 #
 Next we want to start up HBase - 
 CD into the Nutch Root DIR - Nutch1 in my case - run cmd ---> 
