@@ -239,6 +239,49 @@ dhankar@dhankar-VPCEB44EN:~/Nutch1/nutch$
 ```
 # 
 The console dump as seen above may differ for you - focus on the - BUILD SUCCESSFUL. 
+Also we can run certain basic tests to see Nutch has been Built Successfully 
+cd into DIR -- ``` nutch/runtime/local ```
+#
+```
+dhankar@dhankar-VPCEB44EN:~/Nutch1/nutch/runtime/local$ bin/nutch
+Usage: nutch COMMAND
+where COMMAND is one of:
+ inject		inject new urls into the database
+ hostinject     creates or updates an existing host table from a text file
+ generate 	generate new batches to fetch from crawl db
+ fetch 		fetch URLs marked during generate
+ parse 		parse URLs marked during fetch
+ updatedb 	update web table after parsing
+ updatehostdb   update host table after parsing
+ readdb 	read/dump records from page database
+ readhostdb     display entries from the hostDB
+ index          run the plugin-based indexer on parsed batches
+ elasticindex   run the elasticsearch indexer - DEPRECATED use the index command instead
+ solrindex 	run the solr indexer on parsed batches - DEPRECATED use the index command instead
+ solrdedup 	remove duplicates from solr
+ solrclean      remove HTTP 301 and 404 documents from solr - DEPRECATED use the clean command instead
+ clean          remove HTTP 301 and 404 documents and duplicates from indexing backends configured via plugins
+ parsechecker   check the parser for a given url
+ indexchecker   check the indexing filters for a given url
+ plugin 	load a plugin and run one of its classes main()
+ nutchserver    run a (local) Nutch server on a user defined port
+ webapp         run a local Nutch web application
+ junit         	runs the given JUnit test
+ or
+ CLASSNAME 	run the class named CLASSNAME
+Most commands print help when invoked w/o parameters.
+dhankar@dhankar-VPCEB44EN:~/Nutch1/nutch/runtime/local$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch1/nutch/runtime/local$ bin/nutch webapp
+********************************************************************
+*** WARNING: Wicket is running in DEVELOPMENT mode.              ***
+***                               ^^^^^^^^^^^                    ***
+*** Do NOT deploy to your live server(s) without changing this.  ***
+*** See Application#getConfigurationType() for more information. ***
+********************************************************************
+
+
+
+```
 #
 Next we want to start up HBase - 
 CD into the Nutch Root DIR - Nutch1 in my case - run cmd ---> 
