@@ -369,9 +369,14 @@ dhankar@dhankar-VPCEB44EN:~/Nutch1/nutch/runtime/local$
 # 
 When Injecting URLs DIR and the seed.txt file -- facing issues of Delays and Freezes 
 
-While Checking Error Logs in DIR --- ```
+While Checking Error Logs in DIR --- ```/home/dhankar/Nutch1/nutch/runtime/local/logs```
+We look at file - ```hadoop.log``` , within which we search for text - "Caused by:" as an initial check ...
+For instance - We dig up this line below -- 
+"Caused by: org.apache.zookeeper.KeeperException$ConnectionLossException: KeeperErrorCode = ConnectionLoss for /hbase/meta-region-server"
 
 
+
+#
 For now added entried as below  --- maxClientCnxns=60 --- in the ``` /home/dhankar/Nutch1/zookeeper/conf/zoo.cfg ``` file 
 
 #
