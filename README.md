@@ -446,16 +446,16 @@ do we fiddle with ---
   <property>
     <name>zookeeper.znode.parent</name>
     <value>/hbase-unsecure</value>
-  </property>
-  
-  Seems the sources below recommend this to be changed --- 
-  
-  (http://magizbox.com/training/web_crawling/site/nutch/)
-  
-(https://askubuntu.com/questions/599334/the-node-hbase-unsecure-is-not-in-zookeeper-check-the-value-configured-in-zoo)
-
+  </property>   
 
 ```
+
+
+Seems the sources below recommend this to be changed --- 
+[MAgizbox.com](http://magizbox.com/training/web_crawling/site/nutch/)
+  
+[Another Source](https://askubuntu.com/questions/599334/the-node-hbase-unsecure-is-not-in-zookeeper-check-the-value-configured-in-zoo)
+
 #
 
 
