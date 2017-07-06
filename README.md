@@ -417,17 +417,21 @@ We get the following in console --
 Using config: /home/dhankar/Nutch1/zookeeper/bin/../conf/zoo.cfg
 Starting zookeeper ... STARTED
 ```
+
+
+#
+
 ```
 ## Issue -1 --- Zookepper seems Not to Read JAVA_HOME 
 dhankar@dhankar-VPCEB44EN:~/Nutch1/zookeeper$ cat zookeeper.out
 nohup: failed to run command '/usr/lib/jvm/java-8-oracle/jre/bin/java/bin/java': Not a directory
 
-
+PROBABLE SOLUTION / FIX --> Seems this got fixed as couple of runs now the -- zookeeper.out -- file is not being update and the last error logged is as seen above. 
 ```
+
+
 #
 ```
-2017-06-27 19:19:17,612 [myid:] - INFO  [main:ZooKeeper@438] - Initiating client connection, connectString=localhost:2181 sessionTimeout=30000 watcher=org.apache.zookeeper.ZooKeeperMain$MyWatcher@506c589e
-Welcome to ZooKeeper!
 ```
 
 #
@@ -435,7 +439,24 @@ SOLR Announces its PID --- on executing - jps -- SOLR is shown as "jar"
 
 
 #
+```
+## Issue-2 -- Could be a "red herring" but still documented -- 
+do we fiddle with --- 
+  
+  <property>
+    <name>zookeeper.znode.parent</name>
+    <value>/hbase-unsecure</value>
+  </property>
+  
+  Seems the sources below recommend this to be changed --- 
+  
+  (http://magizbox.com/training/web_crawling/site/nutch/)
+  
+(https://askubuntu.com/questions/599334/the-node-hbase-unsecure-is-not-in-zookeeper-check-the-value-configured-in-zoo)
 
+
+```
+#
 
 
 
