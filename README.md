@@ -44,7 +44,7 @@ export HBASE_MANAGES_ZK=true
 
 ```
 #
-Next open the --- ``` sudo gedit /etc/hosts ```
+Next if we are using HBase version less than - 0.96 We open the --- ``` sudo gedit /etc/hosts ```
 
 Change from as below to further as below --- "YourUbuntuComputerName" == 127.0.1.1 ---> 127.0.0.1
 ```
@@ -62,6 +62,11 @@ Change from as below to further as below --- "YourUbuntuComputerName" == 127.0.1
 
 
 ```
+#
+In my case i am using HBase 0.98.8.hadoop-2 ---- thus as mentioned on HBase site and i quote verbatim below -  i need not make any changes to my ``` sudo gedit /etc/hosts   ```
+
+QUOTE -- "This issue has been fixed in hbase-0.96.0 and beyond." --- UNQUOTE
+
 #
 
 Next Open the file --- ~/Nutch1/hbase/conf/hbase-site.xml
