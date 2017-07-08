@@ -457,7 +457,17 @@ Seems the sources below recommend this to be changed ---
 [Another Source](https://askubuntu.com/questions/599334/the-node-hbase-unsecure-is-not-in-zookeeper-check-the-value-configured-in-zoo)
 
 #
+### ISSUE - 3 --- The Command for INJECTING URLS into the DB HBase in our case through NUTCH ??
 
+On the official NUTCH docs here --- [INJECTING URLS](https://wiki.apache.org/nutch/bin/nutch%20inject)
+
+```
+Nutch 2.x
+
+Usage: InjectorJob <url_dir> [-crawlId <id>]
+```
+Needs to be checked further --- 
+#
 
 
 
