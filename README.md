@@ -466,8 +466,46 @@ Nutch 2.x
 
 Usage: InjectorJob <url_dir> [-crawlId <id>]
 ```
-Needs to be checked further --- 
+Needs to be checked further --- current status as of - 8th JULY 17 as below with HBase 0.94.27 as suggested here -- [Gist](https://gist.github.com/xrstf/b48a970098a8e76943b9)
 #
+
+```
+
+dhankar@dhankar-VPCEB44EN:~/Nutch2/nutch/runtime/local$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2/nutch/runtime/local$ ls
+bin  conf  lib  logs  ooo  plugins  test  urls
+dhankar@dhankar-VPCEB44EN:~/Nutch2/nutch/runtime/local$ bin/nutch inject urls
+InjectorJob: starting at 2017-07-08 21:57:27
+InjectorJob: Injecting urlDir: urls
+^Cdhankar@dhankar-VPCEB44EN:~/Nutch2/nutch/runtime/local$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2/nutch/runtime/local$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2/nutch/runtime/local$ bin/nutch inject ./urls/seed.txt
+InjectorJob: starting at 2017-07-08 22:08:47
+InjectorJob: Injecting urlDir: urls/seed.txt
+^Cdhankar@dhankar-VPCEB44EN:~/Nutch2/nutch/runtime/local$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2/nutch/runtime/local$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2/nutch/runtime/local$ bin/nutch inject ./urls
+InjectorJob: starting at 2017-07-08 22:11:39
+InjectorJob: Injecting urlDir: urls
+^Cdhankar@dhankar-VPCEB44EN:~/Nutch2/nutch/runtime/local$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2/nutch/runtime/local$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2/nutch/runtime/local$ bin/nutch inject urls
+InjectorJob: starting at 2017-07-08 22:12:20
+InjectorJob: Injecting urlDir: urls
+^Cdhankar@dhankar-VPCEB44EN:~/Nutch2/nutch/runtime/local$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2/nutch/runtime/local$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2/nutch/runtime/local$ bin/nutch inject file:///urls/seed.txt
+InjectorJob: starting at 2017-07-08 22:20:28
+InjectorJob: Injecting urlDir: file:/urls/seed.txt
+^Cdhankar@dhankar-VPCEB44EN:~/Nutch2/nutch/runtime/local$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2/nutch/runtime/local$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2/nutch/runtime/local$ jps
+14704 HMaster
+17301 Jps
+dhankar@dhankar-VPCEB44EN:~/Nutch2/nutch/runtime/local$ 
+```
+# 
+
 
 
 
