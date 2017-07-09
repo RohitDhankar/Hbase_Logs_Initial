@@ -1,7 +1,11 @@
 Main tutorial source for current / updated information - [Nutch2Tutorial](https://wiki.apache.org/nutch/Nutch2Tutorial)
 
 ### Nutch - apache-nutch-2.3.1-src[Download Link](http://www.apache.org/dyn/closer.cgi/nutch/)
-### HBase - hbase-0.98.8-hadoop2-bin-[Download Link](http://archive.apache.org/dist/hbase/hbase-0.98.8/hbase-0.98.8-hadoop2-bin.tar.gz) 
+
+### ATTEMPT -1 --- HBase - hbase-0.98.8-hadoop2-bin-[Download Link](http://archive.apache.org/dist/hbase/hbase-0.98.8/hbase-0.98.8-hadoop2-bin.tar.gz) 
+### ATTEMPT -2 --- HBase - hbase-0.94.27[Download Link](https://archive.apache.org/dist/hbase/hbase-0.94.27/) 
+
+
 ### Ant - ANT 1.10.1
 ### Solr - Apache Solr solr-5.2.1
 ### ZooKeeper - zookeeper-3.4.10
