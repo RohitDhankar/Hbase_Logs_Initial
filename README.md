@@ -3,7 +3,28 @@ Main tutorial source for current / updated information - [Nutch2Tutorial](https:
 ### Nutch - apache-nutch-2.3.1-src[Download Link](http://www.apache.org/dyn/closer.cgi/nutch/)
 
 ### ATTEMPT -1 --- HBase - hbase-0.98.8-hadoop2-bin-[Download Link](http://archive.apache.org/dist/hbase/hbase-0.98.8/hbase-0.98.8-hadoop2-bin.tar.gz) 
+
+```
+dhankar@dhankar-VPCEB44EN:~/Nutch1$ hbase/bin/hbase shell
+2017-07-06 13:02:25,773 INFO  [main] Configuration.deprecation: hadoop.native.lib is deprecated. Instead, use io.native.lib.available
+HBase Shell; enter 'help<RETURN>' for list of supported commands.
+Type "exit<RETURN>" to leave the HBase Shell
+Version 0.98.8-hadoop2, r6cfc8d064754251365e070a10a82eb169956d5fe, Fri Nov 14 18:26:29 PST 2014
+
+hbase(main):001:0>
+
+```
 ### ATTEMPT -2 --- HBase - hbase-0.94.27[Download Link](https://archive.apache.org/dist/hbase/hbase-0.94.27/) 
+
+```
+dhankar@dhankar-VPCEB44EN:~/Nutch2$ hbase/bin/hbase shell
+HBase Shell; enter 'help<RETURN>' for list of supported commands.
+Type "exit<RETURN>" to leave the HBase Shell
+Version 0.94.27, rfb434617716493eac82b55180b0bbd653beb90bf, Thu Mar 19 06:17:55 UTC 2015
+
+hbase(main):001:0> 
+
+```
 
 
 ### Ant - ANT 1.10.1
