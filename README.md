@@ -464,12 +464,12 @@ PROBABLE SOLUTION / FIX --> Seems this got fixed as couple of runs now the -- zo
 
 #
 SOLR Announces its PID --- on executing - jps -- SOLR is shown as "jar"
-
+#
+### ISSUE-2 -- Could be a "red herring" but still documented -- 
+do we fiddle with --- 
 
 #
 ```
-## Issue-2 -- Could be a "red herring" but still documented -- 
-do we fiddle with --- 
   
   <property>
     <name>zookeeper.znode.parent</name>
@@ -481,8 +481,9 @@ do we fiddle with ---
 
 Seems the sources below recommend this to be changed --- 
 [MAgizbox.com](http://magizbox.com/training/web_crawling/site/nutch/)
+
   
-[Another Source](https://askubuntu.com/questions/599334/the-node-hbase-unsecure-is-not-in-zookeeper-check-the-value-configured-in-zoo)
+[askubuntu.com/questions/599334/the-node-hbase-unsecure-is-not-in-zookeeper-check-the-value-configured-in-zoo](https://askubuntu.com/questions/599334/the-node-hbase-unsecure-is-not-in-zookeeper-check-the-value-configured-in-zoo)
 
 #
 ### ISSUE - 3 --- The Command for INJECTING URLS into the DB HBase in our case through NUTCH ??
@@ -533,6 +534,71 @@ dhankar@dhankar-VPCEB44EN:~/Nutch2/nutch/runtime/local$ jps
 dhankar@dhankar-VPCEB44EN:~/Nutch2/nutch/runtime/local$ 
 ```
 # 
+### STATUS Update - 10th JULY - 0930h 
+
+HBase Shell seems to be performing as expected - am able to create Tables - Insert/ PUT Data  and GET data ...
+
+```
+The HBase shell is the (J)Ruby IRB with the above HBase-specific commands added.
+For more on the HBase Shell, see http://hbase.apache.org/docs/current/book.html
+hbase(main):005:0> 
+hbase(main):006:0* create 'customer','product','shipping_date'
+0 row(s) in 1.2590 seconds
+
+hbase(main):007:0> 
+hbase(main):008:0* list
+TABLE                                                                                                                                                 
+customer                                                                                                                                              
+1 row(s) in 0.0820 seconds
+
+hbase(main):009:0> put 'customer','jacob_martinez','product:coffee_beans','shipping_date:yesterday_testing'
+0 row(s) in 0.0960 seconds
+
+hbase(main):010:0> 
+hbase(main):011:0* list
+TABLE                                                                                                                                                 
+customer                                                                                                                                              
+1 row(s) in 0.0250 seconds
+
+hbase(main):012:0> 
+hbase(main):013:0* get 'customer','jacob_martinez'
+COLUMN                                 CELL                                                                                                           
+ product:coffee_beans                  timestamp=1499665355563, value=shipping_date:yesterday_testing                                                 
+1 row(s) in 0.0220 seconds
+
+hbase(main):014:0> put 'customer','jacob_martinez','product:java_beans','shipping_date:today_testing'
+0 row(s) in 0.0090 seconds
+
+hbase(main):015:0> 
+hbase(main):016:0* get 'customer','jacob_martinez'
+COLUMN                                 CELL                                                                                                           
+ product:coffee_beans                  timestamp=1499665355563, value=shipping_date:yesterday_testing                                                 
+ product:java_beans                    timestamp=1499665495191, value=shipping_date:today_testing                                                     
+2 row(s) in 0.0170 seconds
+
+hbase(main):017:0> scan 'customer'
+ROW                                    COLUMN+CELL                                                                                                    
+ jacob_martinez                        column=product:coffee_beans, timestamp=1499665355563, value=shipping_date:yesterday_testing                    
+ jacob_martinez                        column=product:java_beans, timestamp=1499665495191, value=shipping_date:today_testing                          
+1 row(s) in 0.0300 seconds
+
+hbase(main):018:0> put 'customer','jacob_martinez','product:magic_beans','shipping_date:day_before_yesterday_testing'
+0 row(s) in 0.0090 seconds
+
+hbase(main):019:0> 
+hbase(main):020:0* scan 'customer'
+ROW                                    COLUMN+CELL                                                                                                    
+ jacob_martinez                        column=product:coffee_beans, timestamp=1499665355563, value=shipping_date:yesterday_testing                    
+ jacob_martinez                        column=product:java_beans, timestamp=1499665495191, value=shipping_date:today_testing                          
+ jacob_martinez                        column=product:magic_beans, timestamp=1499665690406, value=shipping_date:day_before_yesterday_testing          
+1 row(s) in 0.0230 seconds
+
+hbase(main):021:0> 
+
+
+```
+
+# Further need to check why NUTCH Injector Job is Freezing ?? 
 
 
 
