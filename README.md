@@ -696,8 +696,32 @@ WatchedEvent state:SyncConnected type:None path:null
 
 ```
 #
-?
+### ISSUE -4 --- HBase 0.94.27 - Can act weird when we need to STOP the HMaster as seen below - am not actioning this as of now 
 #
+```
+### As seen below - even after 3 STOP Commands HMaster process is Active with three PID's 
+#
+dhankar@dhankar-VPCEB44EN:~/Nutch2$ hbase/bin/start-hbase.sh
+starting master, logging to /home/dhankar/Nutch2/hbase/bin/../logs/hbase-dhankar-master-dhankar-VPCEB44EN.out
+dhankar@dhankar-VPCEB44EN:~/Nutch2$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2$ hbase/bin/stop-hbase.sh
+stopping hbase
+dhankar@dhankar-VPCEB44EN:~/Nutch2$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2$ hbase/bin/stop-hbase.sh
+stopping hbase
+dhankar@dhankar-VPCEB44EN:~/Nutch2$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2$ hbase/bin/stop-hbase.sh
+stopping hbase
+dhankar@dhankar-VPCEB44EN:~/Nutch2$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2$ jps
+6113 HMaster
+6341 Jps
+5978 HMaster
+6234 HMaster
+dhankar@dhankar-VPCEB44EN:~/Nutch2$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2$ 
+
+```
 
 
 # Further need to check why NUTCH Injector Job is Freezing ?? 
