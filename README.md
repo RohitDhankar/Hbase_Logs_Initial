@@ -65,7 +65,7 @@ We also uncomment line as below - so that HBase can manage its own instances of 
 
 ```
 # Tell HBase whether it should manage it's own instance of Zookeeper or not.
-export HBASE_MANAGES_ZK=true
+export HBASE_MANAGES_ZK=true ### as on 11th JUL - 1400h - Have changed to ==false
 
 ```
 #
@@ -597,6 +597,108 @@ hbase(main):021:0>
 
 
 ```
+### STATUS Update @ 2017-07-11 13:42:32 --- Zookeeper is UP ---- Not sure if its Connecting to HBase or Nutch --- as seen below -- jps --- shows that Zoo is UP 
+
+```
+dhankar@dhankar-VPCEB44EN:~/Nutch2$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2$ hbase/bin/stop-hbase.sh
+stopping hbase...............
+dhankar@dhankar-VPCEB44EN:~/Nutch2$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2$ solr/bin/solr stop
+Sending stop command to Solr running on port 8983 ... waiting 5 seconds to allow Jetty process 6153 to stop gracefully.
+dhankar@dhankar-VPCEB44EN:~/Nutch2$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2$ hbase/bin/start-hbase.sh
+starting master, logging to /home/dhankar/Nutch2/hbase/bin/../logs/hbase-dhankar-master-dhankar-VPCEB44EN.out
+dhankar@dhankar-VPCEB44EN:~/Nutch2$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2$ solr/bin/solr start
+Waiting to see Solr listening on port 8983 [\]  
+Started Solr server on port 8983 (pid=12455). Happy searching!
+
+dhankar@dhankar-VPCEB44EN:~/Nutch2$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2$ jps
+12455 jar
+11722 ZooKeeperMain
+12635 Jps
+12251 HMaster
+dhankar@dhankar-VPCEB44EN:~/Nutch2$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2$ jps   
+dhankar@dhankar-VPCEB44EN:~/Nutch2$ #### When i start and stop Zoo server in another terminal -- the Process ID or PID of Zoo changes - jps 
+12753 ZooKeeperMain
+12455 jar
+12251 HMaster
+12797 Jps
+dhankar@dhankar-VPCEB44EN:~/Nutch2$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2$ #### 12455 jar is SOLR --- ### 12251 HMaster is HBase ---### 12753 ZooKeeperMain is Zookeeper
+#
+#
+### Below IInd Terminal Output 
+#
+#
+```
+#
+
+#
+
+```
+1, initiating session
+
+WATCHER::
+
+WatchedEvent state:Expired type:None path:null
+2017-07-11 13:39:14,283 [myid:] - WARN  [main-SendThread(localhost:2181):ClientCnxn$SendThread@1285] - Unable to reconnect to ZooKeeper service, session 0x15d2ffce9630011 has expired
+2017-07-11 13:39:14,283 [myid:] - INFO  [main-SendThread(localhost:2181):ClientCnxn$SendThread@1154] - Unable to reconnect to ZooKeeper service, session 0x15d2ffce9630011 has expired, closing socket connection
+2017-07-11 13:39:14,285 [myid:] - INFO  [main-EventThread:ClientCnxn$EventThread@519] - EventThread shut down for session: 0x15d2ffce9630011
+dhankar@dhankar-VPCEB44EN:~/Nutch2/zookeeper/bin$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2/zookeeper/bin$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2/zookeeper/bin$ cd ..
+dhankar@dhankar-VPCEB44EN:~/Nutch2/zookeeper$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2/zookeeper$ jps
+12455 jar
+12696 Jps
+12251 HMaster
+dhankar@dhankar-VPCEB44EN:~/Nutch2/zookeeper$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2/zookeeper$ echo ruok | nc 127.0.0.1 2181
+imokdhankar@dhankar-VPCEB44EN:~/Nutch2/zookeeper$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2/zookeeper$ sudo bin/zkServer.sh start
+[sudo] password for dhankar: 
+ZooKeeper JMX enabled by default
+Using config: /home/dhankar/Nutch2/zookeeper/bin/../conf/zoo.cfg
+Starting zookeeper ... STARTED
+dhankar@dhankar-VPCEB44EN:~/Nutch2/zookeeper$ 
+dhankar@dhankar-VPCEB44EN:~/Nutch2/zookeeper$ bin/zkCli.sh   ### Zookeeper seems to BE Ok --- he is Also Responding with imok to -- echo ruok | nc 127.0.0.1 2181
+Connecting to localhost:2181
+2017-07-11 13:42:32,517 [myid:] - INFO  [main:Environment@100] - Client environment:zookeeper.version=3.4.10-39d3a4f269333c922ed3db283be479f9deacaa0f, built on 03/23/2017 10:13 GMT
+2017-07-11 13:42:32,522 [myid:] - INFO  [main:Environment@100] - Client environment:host.name=localhost
+2017-07-11 13:42:32,522 [myid:] - INFO  [main:Environment@100] - Client environment:java.version=1.8.0_111
+2017-07-11 13:42:32,525 [myid:] - INFO  [main:Environment@100] - Client environment:java.vendor=Oracle Corporation
+2017-07-11 13:42:32,525 [myid:] - INFO  [main:Environment@100] - Client environment:java.home=/home/dhankar/usr/lib/jvm/java-8-oracle/jre
+2017-07-11 13:42:32,525 [myid:] - INFO  [main:Environment@100] - Client environment:java.class.path=/home/dhankar/Nutch2/zookeeper/bin/../build/classes:/home/dhankar/Nutch2/zookeeper/bin/../build/lib/*.jar:/home/dhankar/Nutch2/zookeeper/bin/../lib/slf4j-log4j12-1.6.1.jar:/home/dhankar/Nutch2/zookeeper/bin/../lib/slf4j-api-1.6.1.jar:/home/dhankar/Nutch2/zookeeper/bin/../lib/netty-3.10.5.Final.jar:/home/dhankar/Nutch2/zookeeper/bin/../lib/log4j-1.2.16.jar:/home/dhankar/Nutch2/zookeeper/bin/../lib/jline-0.9.94.jar:/home/dhankar/Nutch2/zookeeper/bin/../zookeeper-3.4.10.jar:/home/dhankar/Nutch2/zookeeper/bin/../src/java/lib/*.jar:/home/dhankar/Nutch2/zookeeper/bin/../conf:
+2017-07-11 13:42:32,526 [myid:] - INFO  [main:Environment@100] - Client environment:java.library.path=/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+2017-07-11 13:42:32,526 [myid:] - INFO  [main:Environment@100] - Client environment:java.io.tmpdir=/tmp
+2017-07-11 13:42:32,526 [myid:] - INFO  [main:Environment@100] - Client environment:java.compiler=<NA>
+2017-07-11 13:42:32,526 [myid:] - INFO  [main:Environment@100] - Client environment:os.name=Linux
+2017-07-11 13:42:32,526 [myid:] - INFO  [main:Environment@100] - Client environment:os.arch=amd64
+2017-07-11 13:42:32,526 [myid:] - INFO  [main:Environment@100] - Client environment:os.version=4.4.0-83-generic
+2017-07-11 13:42:32,526 [myid:] - INFO  [main:Environment@100] - Client environment:user.name=dhankar
+2017-07-11 13:42:32,526 [myid:] - INFO  [main:Environment@100] - Client environment:user.home=/home/dhankar
+2017-07-11 13:42:32,527 [myid:] - INFO  [main:Environment@100] - Client environment:user.dir=/home/dhankar/Nutch2/zookeeper
+2017-07-11 13:42:32,528 [myid:] - INFO  [main:ZooKeeper@438] - Initiating client connection, connectString=localhost:2181 sessionTimeout=30000 watcher=org.apache.zookeeper.ZooKeeperMain$MyWatcher@506c589e
+2017-07-11 13:42:32,556 [myid:] - INFO  [main-SendThread(localhost:2181):ClientCnxn$SendThread@1032] - Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+Welcome to ZooKeeper!
+JLine support is enabled
+2017-07-11 13:42:32,649 [myid:] - INFO  [main-SendThread(localhost:2181):ClientCnxn$SendThread@876] - Socket connection established to localhost/127.0.0.1:2181, initiating session
+[zk: localhost:2181(CONNECTING) 0] 2017-07-11 13:42:32,674 [myid:] - INFO  [main-SendThread(localhost:2181):ClientCnxn$SendThread@1299] - Session establishment complete on server localhost/127.0.0.1:2181, sessionid = 0x15d30b1e86a0003, negotiated timeout = 30000
+
+WATCHER::
+
+WatchedEvent state:SyncConnected type:None path:null
+
+```
+#
+?
+#
+
 
 # Further need to check why NUTCH Injector Job is Freezing ?? 
 
