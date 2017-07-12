@@ -722,9 +722,9 @@ dhankar@dhankar-VPCEB44EN:~/Nutch2$
 dhankar@dhankar-VPCEB44EN:~/Nutch2$ 
 
 ```
-### Zookeeper is UP and running when initiated independently as seen above . 
+Zookeeper is UP and running when initiated independently as seen above . 
 #
-### When we dont start Zookeeper independently and let HBase manage its own Zookeeper incident we can see that Zookeeper is  UP and running and Communicating with HBase Master as its supposed to be...
+When we dont start Zookeeper independently and let HBase manage its own Zookeeper incident we can see that Zookeeper is  UP and running and Communicating with HBase Master as its supposed to be...
 #
 ```
 Tue Jul 11 19:03:31 IST 2017 Stopping hbase (via master)
@@ -744,7 +744,13 @@ EndOfStreamException: Unable to read additional data from client sessionid 0x15d
 2017-07-11 19:03:33,831 INFO org.apache.hadoop.hbase.master.SplitLogManager$TimeoutMonitor: localhost,36887,1499778759506.splitLogManagerTimeoutMonitor exiting
 
 ```
-### Also as seen below - the data we had entered and stored in the HBase earlier as a dummy test data - is also reflecting as Zookeeper - below ...
+Also as seen below - the data we had entered and stored in HBase earlier as a dummy test data - is also reflecting as H base STORES ...
+
+```
+2017-07-11 19:03:34,419 INFO org.apache.hadoop.hbase.regionserver.Store: Closed product
+2017-07-11 19:03:34,421 INFO org.apache.hadoop.hbase.regionserver.Store: Closed shipping_date
+
+```
 
 ```
 2017-07-11 19:03:42,678 INFO org.apache.hadoop.hbase.regionserver.Leases: RegionServer:0;localhost,33974,1499778760200.leaseChecker closing leases
@@ -769,7 +775,7 @@ EndOfStreamException: Unable to read additional data from client sessionid 0x15d
 
 
 
-# Further need to check why NUTCH Injector Job is Freezing ?? 
+### Further need to check why NUTCH Injector Job is Freezing ?? 
 
 
 
