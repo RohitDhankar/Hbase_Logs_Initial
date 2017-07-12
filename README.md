@@ -722,6 +722,51 @@ dhankar@dhankar-VPCEB44EN:~/Nutch2$
 dhankar@dhankar-VPCEB44EN:~/Nutch2$ 
 
 ```
+### Zookeeper is UP and running when initiated independently as seen above . 
+#
+### When we dont start Zookeeper independently and let HBase manage its own Zookeeper incident we can see that Zookeeper is  UP and running and Communicating with HBase Master as its supposed to be...
+#
+```
+Tue Jul 11 19:03:31 IST 2017 Stopping hbase (via master)
+2017-07-11 19:03:32,834 INFO org.apache.zookeeper.server.NIOServerCnxnFactory: Accepted socket connection from /127.0.0.1:48486
+2017-07-11 19:03:32,837 INFO org.apache.zookeeper.server.ZooKeeperServer: Client attempting to establish new session at /127.0.0.1:48486
+2017-07-11 19:03:32,849 INFO org.apache.zookeeper.server.ZooKeeperServer: Established session 0x15d31c7b5030003 with negotiated timeout 40000 for client /127.0.0.1:48486
+2017-07-11 19:03:33,071 INFO org.apache.hadoop.hbase.master.HMaster: Cluster shutdown requested
+2017-07-11 19:03:33,071 INFO org.apache.hadoop.hbase.master.ServerManager: Waiting on regionserver(s) to go down localhost,33974,1499778760200
+2017-07-11 19:03:33,071 INFO org.apache.hadoop.hbase.master.CatalogJanitor: localhost,36887,1499778759506-CatalogJanitor exiting
+2017-07-11 19:03:33,071 INFO org.apache.hadoop.hbase.master.HMaster$2: localhost,36887,1499778759506-BalancerChore exiting
+2017-07-11 19:03:33,406 WARN org.apache.zookeeper.server.NIOServerCnxn: caught end of stream exception
+EndOfStreamException: Unable to read additional data from client sessionid 0x15d31c7b5030003, likely client has closed socket
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:220)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:208)
+	at java.lang.Thread.run(Thread.java:745)
+2017-07-11 19:03:33,428 INFO org.apache.zookeeper.server.NIOServerCnxn: Closed socket connection for client /127.0.0.1:48486 which had sessionid 0x15d31c7b5030003
+2017-07-11 19:03:33,831 INFO org.apache.hadoop.hbase.master.SplitLogManager$TimeoutMonitor: localhost,36887,1499778759506.splitLogManagerTimeoutMonitor exiting
+
+```
+### Also as seen below - the data we had entered and stored in the HBase earlier as a dummy test data - is also reflecting as Zookeeper - below ...
+
+```
+2017-07-11 19:03:42,678 INFO org.apache.hadoop.hbase.regionserver.Leases: RegionServer:0;localhost,33974,1499778760200.leaseChecker closing leases
+2017-07-11 19:03:42,678 INFO org.apache.hadoop.hbase.regionserver.Leases: RegionServer:0;localhost,33974,1499778760200.leaseChecker closed leases
+2017-07-11 19:03:42,682 INFO org.apache.hadoop.hbase.zookeeper.RegionServerTracker: RegionServer ephemeral node deleted, processing expiration [localhost,33974,1499778760200]
+2017-07-11 19:03:42,683 INFO org.apache.zookeeper.server.PrepRequestProcessor: Processed session termination for sessionid: 0x15d31c7b5030001
+2017-07-11 19:03:42,693 INFO org.apache.zookeeper.ZooKeeper: Session: 0x15d31c7b5030001 closed
+2017-07-11 19:03:42,693 INFO org.apache.hadoop.hbase.regionserver.HRegionServer: stopping server localhost,33974,1499778760200; zookeeper connection closed.
+2017-07-11 19:03:42,693 INFO org.apache.hadoop.hbase.regionserver.HRegionServer: RegionServer:0;localhost,33974,1499778760200 exiting
+2017-07-11 19:03:42,693 INFO org.apache.zookeeper.ClientCnxn: EventThread shut down
+2017-07-11 19:03:42,695 INFO org.apache.zookeeper.server.NIOServerCnxn: Closed socket connection for client /127.0.0.1:48132 which had sessionid 0x15d31c7b5030001
+
+```
+# 
+```
+
+
+```
+#
+
+
+
 
 
 # Further need to check why NUTCH Injector Job is Freezing ?? 
